@@ -13,18 +13,21 @@ func NewSet[T comparable]() Set[T] {
 }
 
 // Add adds an item to the set
-func (s Set[T]) Add(data T) {
+func (s Set[T]) Add(data T) bool {
 
+	// Item already exists
 	if s.Items[data] {
-		return // Already in the map
+		return false
 	}
 
 	s.Items[data] = true
+	return true
 }
 
 // Del Deletes an item from the set
 func (s Set[T]) Del(data T) bool {
 
+	// Delete if item exists
 	if s.Items[data] {
 		delete(s.Items, data)
 		return true
