@@ -8,13 +8,13 @@ import (
 )
 
 func TestIntSet(t *testing.T) {
-	a := set.NewSet[int]()
-	a.Add(5)
-	a.Add(6)
-	a.Add(7)
-	a.Del(7)
-	for i := range a.Items {
-		fmt.Printf("Key=%d\n", i)
+	myset := set.NewSet[int]()
+	myset.Add(5)
+	myset.Add(6)
+	myset.Add(7)
+	myset.Del(7)
+	for i := range myset.Items {
+		fmt.Printf("item=%d\n", i)
 	}
 }
 
@@ -26,6 +26,6 @@ func TestStringSet(t *testing.T) {
 	a.Del("Ameer")
 
 	for i := range a.Items {
-		fmt.Printf("Key=%s\n", i)
+		fmt.Printf("item=%s\n", i)
 	}
 }
