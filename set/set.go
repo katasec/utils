@@ -35,3 +35,14 @@ func (s Set[T]) Del(data T) bool {
 
 	return false
 }
+
+func (s Set[T]) List() []T {
+
+	var list []T
+
+	for k := range s.Items {
+		list = append(list, k)
+	}
+
+	return list
+}

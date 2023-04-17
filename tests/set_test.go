@@ -23,9 +23,13 @@ func TestStringSet(t *testing.T) {
 	a.Add("Ameer")
 	a.Add("Is")
 	a.Add("Testing")
-	a.Del("Ameer")
 
-	for i := range a.Items {
-		fmt.Printf("item=%s\n", i)
+	// for i := range a.Items {
+	// 	fmt.Printf("item=%s\n", i)
+	// }
+
+	for _, j := range a.List() {
+		fmt.Printf("item=%s\n", j)
 	}
+
 }
